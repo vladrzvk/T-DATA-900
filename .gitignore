@@ -1,0 +1,5 @@
+# Ignore data files
+*.csv
+spark-env.sh
+load-spark-env.sh
+articles/
