@@ -19,12 +19,12 @@ def main():
   file = "/opt/spark-data/MTA_2014-08-17.csv"
   sql,sc = init_spark()
 
-  df = sql.read.load(file,format = "csv", inferSchema="true", sep="\t", header="true"
-      ) \
+  df = sql.read.load(file,format = "csv", inferSchema="true", sep=",", header="true") \
       .withColumn("report_hour",date_format(col("time_received"),"yyyy-MM-dd HH:00:00")) \
       .withColumn("report_date",date_format(col("time_received"),"yyyy-MM-dd"))
   
-  # Filter invalid coordinates
+  
+  # Filter invalid coordinates 
   df.where("latitude <= 90 AND latitude >= -90 AND longitude <= 180 AND longitude >= -180") \
     .where("latitude != 0.000000 OR longitude !=  0.000000 ") \
     .write \

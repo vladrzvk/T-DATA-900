@@ -27,7 +27,7 @@ The following steps will make you run your spark cluster's containers.
 
 
 ```sh
-docker build -t cluster-apache-spark:3.0.2 .
+docker build -t vladislavrazyvika/docker-spark-cluster-t-900:latest .
 ```
 
 ## Run the docker-compose
@@ -109,7 +109,7 @@ To submit the app connect to one of the workers or the master and execute:
 /opt/spark-apps/main.py
 ```
 
-![alt text](./articles/images/pyspark-demo.png "Spark UI with pyspark program running")
+![alt text]("Spark UI with pyspark program running")
 
 ## MTA Bus Analytics[Scala]
 
